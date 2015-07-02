@@ -1,0 +1,60 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="todoApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <link href="style/css/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    
+    <script src="js/vendor/angular/angular.min.js"></script>
+    <script src="js/vendor/bootstrap/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="js/app.js"></script>
+    
+    <style>
+        .center-grey {
+            background: #f2f2f2;
+            margin-top: 20;
+        }
+
+        .top-buffer {
+            margin-top: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+        }
+    </style>
+    <title>Angular Todo Note App</title>
+</head>
+<body>
+    <div class="container center-grey" ng-controller="todoController">
+        <div class="row top-buffer">
+            <span class="col-md-3"></span>
+            <span class="col-md-5">
+                <input class="form-control" type="text" ng-model="note" placeholder="Add a note here" />
+            </span>
+            <span class="col-md-1">
+                <button ng-click="createNote()" class="btn btn-success">Add</button>
+            </span>
+            <span class="col-md-1">
+                <button ng-click="addNotesFromFile()" class="btn btn-success">Add Notes From File </button>
+            </span>
+
+            <span class="col-md-3"></span>
+        </div>
+        <div class="row top-buffer">
+            <span class="col-md-3"></span>
+            <span class="col-md-6">
+                <ul class="list-group">
+                    <li ng-repeat="note in notes track by $index" class="list-group-item">
+                        <span>{{note}}</span>
+                    </li>
+                </ul>
+            </span>
+            <span class="col-md-3"></span>
+        </div>
+        <textarea>
+            {{reqData}}
+        </textarea>
+</div>
+</body>
+</html>
