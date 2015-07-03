@@ -49,9 +49,12 @@ describe('notesFactory tests', function () {
 
     //check if it successfully add a new item
     it('should return four todo notes after adding one more', function () {
+
+        var result1 = notesFactory.get();
+
         notesFactory.put('Angular is awesome');
 
-        var result = notesFactory.get();
-        expect(result.length).toBe(4);
+        var result2 = notesFactory.get();
+        expect(result2.length).toBe(result1.length + 1);
     });
 });
