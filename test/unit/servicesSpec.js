@@ -55,6 +55,8 @@ describe('notesFactory tests', function () {
         notesFactory.put('Angular is awesome');
 
         var result2 = notesFactory.get();
+        console.log('Log1 = ' + result1.length);
+        console.log('Log2 = ' + result2.length);
         expect(result2.length).toBe(result1.length + 1);
     });
 });
