@@ -77,4 +77,23 @@ module.exports = function (config) {
         // if true, it capture browsers, run tests and exit
         singleRun: false
     });
+	
+	
+	var configuration = {
+    // other things
+ 
+    customLaunchers: {
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+    },
+};
+ 
+if (process.env.TRAVIS) {
+    configuration.browsers = ['Chrome_travis_ci'];
+}
+ 
+config.set(configuration);
+
 };
