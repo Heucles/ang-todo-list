@@ -1,5 +1,6 @@
 ﻿{"devDependencies": {
 	"karma": "~0.12",
+	"karma-firefox-launcher": "~0.1"
 	"karma-jasmine": "~0.2.2"
 },
 "scripts": {
